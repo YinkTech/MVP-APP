@@ -1,0 +1,8 @@
+<%= render @external %>
+
+<div>
+  <%= link_to "Edit this external", edit_external_path(@external) %> |
+  <%= link_to "Back to externals", externals_path %>
+
+  <%= button_to "Destroy this external", @external, method: :delete %>
+</div>

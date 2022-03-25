@@ -44,9 +44,9 @@
     <div class="d-block d-lg-none">
         <%= link_to "All Transactions", root_path, class:"xactive nav-link text-light box-arrow-in-right fs-5" %>
         <hr>
-        <a class="nav-link text-light box-arrow-in-right fs-5" href="#"> Group Transactions</a>
+        <%= link_to "Group Transactions", groups_path, class:"nav-link text-light box-arrow-in-right fs-5"  %>
         <hr>
-        <a class="nav-link text-light box-arrow-in-right fs-5" href="#"> External Transactions</a>
+        <%= link_to "External Transactions", externals_path, class:"nav-link text-light box-arrow-in-right fs-5"  %>
         <hr>
         <div class="dropdown">
           <a href="javascript:void(0)" class="dropbtn btn btn-outline-info fs-4 text-light">Create New</a>

@@ -1,0 +1,14 @@
+<h1>Externals</h1>
+
+<div id="externals">
+  <% @externals.each do |external| %>
+      <% if external.user == current_user %>
+        <%= render external %>
+      <% end %>
+    <p>
+      <%= link_to "Show this external", external %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New external", new_external_path %>

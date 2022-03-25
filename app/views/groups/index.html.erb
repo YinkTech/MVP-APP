@@ -1,0 +1,19 @@
+<h1>Groups</h1>
+
+<div id="groups">
+  <% @groups.each do |group| %>
+      <% if group.user == current_user %>
+        <%= render group %>
+          <div class="card">
+            <div class="card-body">
+              This is some text within a card body.
+            </div>
+          </div>
+      <% end %>
+    <p>
+      <%= link_to "Show this group", group %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New group", new_group_path %>

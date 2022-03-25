@@ -1,2 +1,29 @@
-<h1>Home index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if user_signed_in? %>  
+<div id="groups">
+  <% @groups.each do |group| %>
+  <% if group.user == current_user %>
+    <%= render group %>
+  <% end %>
+    <p>
+      <%= link_to "Show this group", group %>
+    </p>
+  <% end %>
+</div>
+
+<div id="externals">
+  <% @externals.each do |external| %>
+    <% if external.user == current_user %>
+    <%= render external %>
+    <% end %>
+    <p>
+      <%= link_to "Show this external", external %>
+    </p>
+  <% end %>
+</div>
+    <% else %>
+
+        <div class="btn-group main-links d-flex justify-content-center" role="group" aria-label="Third group">
+             <%= link_to "Sign In", new_user_session_path, class:"btn btn-info text-light fs-2" %>
+             <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-warning text-light fs-2" %>
+        </div>
+    <% end %>
