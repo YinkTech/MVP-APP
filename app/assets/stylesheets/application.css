@@ -18,9 +18,11 @@
         background: rgb(78, 152, 187);
         color: #fff;
     }
-
+    a {
+        text-decoration: none;
+    }
     a:hover {
-        color: green;
+        color: rgb(33, 116, 155);
     }
     a:active {
         color: green;

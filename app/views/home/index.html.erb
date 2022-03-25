@@ -1,12 +1,9 @@
 <% if user_signed_in? %>  
 <div id="groups">
   <% @groups.each do |group| %>
-  <% if group.user == current_user %>
-    <%= render group %>
-  <% end %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+    <% if group.user == current_user %>
+      <%= render group %>
+    <% end %>
   <% end %>
 </div>
 
@@ -15,11 +12,12 @@
     <% if external.user == current_user %>
     <%= render external %>
     <% end %>
-    <p>
-      <%= link_to "Show this external", external %>
-    </p>
   <% end %>
 </div>
+
+
+
+
     <% else %>
 
         <div class="btn-group main-links d-flex justify-content-center" role="group" aria-label="Third group">

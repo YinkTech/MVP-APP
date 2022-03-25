@@ -1,8 +1,26 @@
-<%= render @group %>
+
 
 <div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
+  
+  <%= link_to "Back to groups", groups_path, class:"mb-5 btn btn-outline-success" %>
 
-  <%= button_to "Destroy this group", @group, method: :delete %>
+ <%= render @group %>
+
+ 
+<hr>
+    <h5 class="my-5"> List on other Entries
+       <button class="btn btn-info"> add new</button>
+    </h5>
+      <div class="card-footer bg-transparent border-success">
+        <table class="mx-auto">
+          <tr>
+            <td>
+                <%= link_to "Edit group", edit_group_path(@group), class:"btn btn-info p-2 rounded" %> | | 
+            </td>
+            <td> 
+              <%= button_to " Delete group", @group, method: :delete, class:"btn btn-danger p-2 rounded" %> 
+            </td>
+            </tr>
+        </table>
+      </div>
 </div>

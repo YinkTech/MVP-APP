@@ -1,27 +1,25 @@
 <div id="<%= dom_id group %>">
-  <p>
-    <strong>Company name:</strong>
+  <div class="card border-dark mb-3">
+    <div class="card-header text-uppercase">
+    <strong>Company name : </strong>
     <%= group.company_name %>
-  </p>
+    </div>
+        <div class="card-body text-dark">
+          <h5 class="card-title text-capitalize">
+            <strong>Product name:</strong>
+            <%= group.product_name %>
+          </h5>
+          <p class="card-text">
+          At first entry the 
+            <strong>Quantity is</strong>
+            <b> <%= group.quantity %> </b>
+            and the
+            <strong>Amount is</strong>
+            <b><%= group.amount %> </b>
+          </p>
+        </div>
+     
+  </div>
 
-  <p>
-    <strong>Product name:</strong>
-    <%= group.product_name %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= group.quantity %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= group.amount %>
-  </p>
-
-  <p>
-    <strong>user:</strong>
-    <%= group.user_id %>
-  </p>
 
 </div>

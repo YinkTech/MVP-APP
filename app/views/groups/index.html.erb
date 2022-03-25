@@ -1,19 +1,17 @@
-<h1>Groups</h1>
+<h1 class="text-info">Groups List</h1>
 
 <div id="groups">
   <% @groups.each do |group| %>
       <% if group.user == current_user %>
-        <%= render group %>
-          <div class="card">
-            <div class="card-body">
-              This is some text within a card body.
+          <div class="card mb-3">
+            <div class="card-body row">
+            <b class=" fs-2 col-6 text-capitalize">  <%= link_to group.company_name, group %> </b>
+            <b class=" fs-2 col-6 text-end">  <%= link_to group.amount %> </b>
+             <i class="text-center d-block "> created at: <%= group.created_at %> </i>
             </div>
           </div>
       <% end %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New group", new_group_path %>
+<%= link_to "New group", new_group_path, class:"btn btn-info my-3" %>
