@@ -64,12 +64,12 @@ a:active {
   position: absolute;
   background-color: #f9f9f9;
   min-width: max-content;
-  box-shadow: 0px 8px 16px 0px #00000033;
+  box-shadow: 1px 8px 16px 1px #0003;
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: #000000;
+  color: #000;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
