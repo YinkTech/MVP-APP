@@ -45,7 +45,7 @@ a:active {
     min-width: max-content;
 }
 
-.current-navlink:hover{
+.current-navlink:hover {
     animation: ease-in-out;
     background: rgb(105, 179, 211);
 }
