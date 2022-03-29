@@ -67,7 +67,7 @@ Feel free to check the [issues page](https://github.com/YinkTech/MVP-APP/issues)
 Give a ⭐️ if you like this project!
 
 
-*  Gregoire Vella (Design from [Behance](https://www.behance.net/gregoirevella), (https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding))
+*  Gregoire Vella (Design from [Behance](https://www.behance.net/gregoirevella), [Design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding))
 ## 📝 License
 
 This project is [MIT](https://creativecommons.org/licenses/by-nc/4.0/) licensed.
