@@ -1,1 +1,1 @@
-json.array! @externals, partial: "externals/external", as: :external
+json.array! @externals, partial: 'externals/external', as: :external
