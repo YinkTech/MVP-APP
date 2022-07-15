@@ -1,0 +1,41 @@
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :company_name, style: "display: block", class:"form-label"%>
+    <%= form.text_field :company_name, class:"form-control", placeholder:"Full Company Name" %>
+  </div>
+
+  <div>
+    <%= form.label :product_name, style: "display: block", class:"form-label"%>
+    <%= form.text_field :product_name, class:"form-control", placeholder:"Product Name" %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block", class:"form-label"%>
+    <%= form.text_field :quantity, class:"form-control", placeholder:"Enter Excat quatity" %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block", class:"form-label"%>
+    <%= form.text_field :amount, class:"form-control", placeholder:"Amount with Currecncy", value:"₦ " %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.number_field :user_id, id: :external_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-success" %>
+  </div>
+<% end %>

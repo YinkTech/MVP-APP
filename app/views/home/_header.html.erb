@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light primarycolor">
+  <div class="container-fluid">
+    <a class="nav-link text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      <i class="bi bi-grid-3x3-gap-fill fs-4"></i>
+    </a>
+    <%= link_to "Transactions Control", root_path, class:"navbar-brand text-warning" %>
+    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+      <% if user_signed_in? %>
+        <%= link_to "All Transactions", root_path, class:"nav-link current-navlink active text-light" %>
+        <%= link_to "Group Transactions", groups_path, class:"nav-link current-navlink text-light"  %>
+        <%= link_to "External Transactions", externals_path, class:"nav-link current-navlink text-light"  %>
+          
+      </div>
+
+      <div class="dropdown dropdownlink">
+            <a href="javascript:void(0)" class="dropbtn btn btn-outline-info text-light">Create</a>
+              <div class="dropdown-content">
+                <%= link_to "Group Transactions", new_group_path, class:"nav-link btn rounded-3" %>
+                <%= link_to "External Transactions", new_external_path, class:"nav-link btn rounded-3" %>
+              </div>
+          </div>
+    </div>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class:"nav-link text-light" %>
+        <%= link_to "Sign Up", new_user_registration_path, class:"nav-link text-light" %> 
+      <% end %>
+  </div>
+</nav>
+
+
+<div class="offcanvas offcanvas-start primarycolor" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel"> Transactions Control </h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body text-center text-light">
+    <div>
+
+    <% if user_signed_in? %>
+    <div class="d-block d-lg-none">
+        <%= link_to "All Transactions", root_path, class:"active nav-link text-light box-arrow-in-right fs-5" %>
+        <hr>
+        <%= link_to "Group Transactions", groups_path, class:"nav-link text-light box-arrow-in-right fs-5"  %>
+        <hr>
+        <%= link_to "External Transactions", externals_path, class:"nav-link text-light box-arrow-in-right fs-5"  %>
+        <hr>
+        <div class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn btn btn-outline-info fs-4 text-light">Create New</a>
+            <div class="dropdown-content">
+              <%= link_to "Group Transactions", new_group_path, class:"nav-link btn rounded-3" %>
+              <%= link_to "External Transactions", new_external_path, class:"nav-link btn rounded-3" %>
+            </div>
+        </div>
+      <hr>
+      <hr>
+    </div>
+    <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link text-light fs-4" %>
+    <hr >
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link text-light btn fs-4 mx-auto" %>   
+
+    <% else %>
+        <%= link_to "Sign In", new_user_session_path, class:"nav-link text-light fs-5" %>
+        <hr >
+        <%= link_to "Sign Up", new_user_registration_path, class:"nav-link text-light box-arrow-in-right fs-5" %>   
+    <% end %>
+
+    </div>
+  </div>
+</div>

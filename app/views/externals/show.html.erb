@@ -1,0 +1,19 @@
+
+
+<div>
+  <%= link_to "Back to externals", externals_path, class:"mb-5 btn btn-outline-success"  %>
+    <%= render @external %>
+          <hr>
+     <div class="card-footer bg-transparent border-success mt-5">
+      <table class="mx-auto my-2">
+        <tr>
+            <td>
+                <%= link_to "Edit Transaction", edit_external_path(@external), class:"btn btn-info p-2 rounded" %> | | 
+            </td>
+            <td> 
+              <%= button_to " Delete Transaction", @external, method: :delete, class:"btn btn-danger p-2 rounded" %> 
+            </td>
+          </tr>
+      </table>
+      </div>
+</div>

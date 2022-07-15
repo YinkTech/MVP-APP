@@ -1,0 +1,18 @@
+<h1 class="text-info text-capitalize">externals List</h1>
+
+<div id="externals">
+  <% @externals.each do |external| %>
+      <% if external.user == current_user %>
+          <div class="card mb-3">
+            <div class="card-body row">
+              <b class=" fs-2 col-6 text-capitalize">  <%= link_to external.product_name, external %> </b>
+              <b class=" fs-2 col-6 text-end">  <%= link_to external.amount, external  %> </b>
+              <i class="text-center d-block "> created at: <%= external.created_at %> </i>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New external", new_external_path, class:"btn btn-info my-3" %>
+
